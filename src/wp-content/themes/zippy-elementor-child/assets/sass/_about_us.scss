@@ -1,0 +1,19 @@
+#why_choose_us{
+    .elementor-widget-icon-box{
+        .elementor-icon-box-icon{
+            margin-top: -35px;
+            i, span{
+                background: var(--e-global-color-primary);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+        }
+        .elementor-icon-box-content{
+        }
+    }
+}

@@ -1,78 +1,214 @@
-#header{
-    .elementor-widget-jkit_search, .elementor-widget-woocommerce-menu-cart, .elementor-widget-icon{
-        .elementor-widget-container{
-            text-align: center;
-            .jkit-search, .elementor-button-icon, .elementor-icon{
-                padding-bottom: 30px;
-                display: inline-block;
-                @media screen and (max-width: 767px) {
-                    padding-bottom: 0;
+@import url("../lib/slick/slick.css");
+@import url("../lib/slick/slick-theme.css");
+@import "about_us";
+@import "contact_us";
+
+.slick-slide {
+    margin: 0 15px !important;
+}
+
+
+#header {
+    .icon_right_box {
+        >* {
+            &.elementor-element {
+                width: 35px;
+                height: auto;
+
+                @include tablet {
+                    width: 110px;
+                    height: 50px;
+                }
+
+                @include desktop {
+                    width: 110px;
+                    height: 60px;
+                }
+
+                &.elementor-widget-icon {
+                    @include tablet {
+                        width: 130px;
+                    }
+                }
+
+                .elementor-widget-container {
+                    text-align: center;
+
+                    &:after {
+                        top: 100%;
+                        left: 0;
+                        right: 0;
+                        color: var(--e-global-color-f202e73);
+                        position: absolute;
+                        text-align: center;
+                        font-size: 15px;
+                        display: none;
+
+                        @include tablet {
+                            display: block;
+                        }
+                    }
+                }
+
+                &.elementor-widget-jkit_search {
+                    .elementor-widget-container {
+                        &:after {
+                            content: "Search Finder";
+                        }
+                    }
+                }
+
+                &.elementor-widget-woocommerce-menu-cart {
+                    padding-top: 4px;
+
+                    .elementor-widget-container {
+                        &:after {
+                            content: "Cart";
+                            bottom: -2px;
+                        }
+
+                        #elementor-menu-cart__toggle_button {
+                            background: none !important;
+                        }
+                    }
+                }
+
+                &.elementor-widget-icon {
+                    .elementor-widget-container {
+                        &:after {
+                            content: "Be Our Member";
+                            bottom: 4px;
+                        }
+                    }
                 }
             }
-            &:after{
-                bottom: 0;
-                left: 0;
-                right: 0;
-                color: var(--e-global-color-f202e73);
-                font-size: 15px;
-                position: absolute;
-                text-align: center;
-                @media screen and (max-width: 767px) {
-                    display: none;
-                }
-            }
         }
     }
-    .elementor-widget-jkit_search{
-        .elementor-widget-container{
-            &:after{
-                content: "Search Finder";
-            }   
-        }
-    }
-    .elementor-widget-woocommerce-menu-cart{
-        .elementor-widget-container{
-            &:after{
-                content: "Cart";
-                bottom: -2px;
-            }
-            #elementor-menu-cart__toggle_button{
-                background: none !important;
-            }
-        }
-    }
-    .elementor-widget-icon{
-        .elementor-widget-container{
-            &:after{
-                content: "Be Our Member";
-                bottom: 4px;
-            }   
-        }
-    }
-    .jkit-hamburger-menu{
-        &:focus{
+
+    .jkit-hamburger-menu {
+        background: none;
+
+        &:focus {
             background: none !important;
+        }
+    }
+
+    .jkit-close-menu {
+        background: none;
+    }
+}
+
+#about_the_reefer {
+    .elementor-widget-heading {
+        position: relative;
+
+        &:before {
+            content: "";
+            width: 255px;
+            height: 190px;
+            border: solid var(--e-global-color-eb55326);
+            border-width: 2px 0 0 2px;
+            position: absolute;
+            top: -30px;
+            left: -30px;
+
+            @include desktop {
+                top: -70px;
+                left: -70px;
+            }
         }
     }
 }
 
 
-#what_we_offer{
-    .elementor-widget-image-box{
-        .elementor-image-box-wrapper{
+#what_we_offer {
+    .elementor-widget-image-box {
+        a {
+            display: block;
+        }
+
+        .elementor-image-box-wrapper {
             position: relative;
-            img{
+
+            img {
                 height: 320px;
                 object-fit: cover;
                 object-position: center center;
+                display: block;
             }
-            .elementor-image-box-content{
+
+            .elementor-image-box-content {
                 position: absolute;
                 top: 200px;
                 left: 0;
                 right: 0;
                 width: 45%;
                 margin: 0 auto;
+            }
+        }
+    }
+}
+
+.product-item {
+    .woocommerce-product-details__short-description {
+        color: var(--e-global-color-f202e73);
+    }
+
+    .elementor-widget-woocommerce-product-price {
+        p {
+            color: var(--e-global-color-primary);
+
+            bdi {
+                font-size: 23px;
+            }
+
+            del {
+                color: var(--e-global-color-f202e73);
+
+                bdi {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    .woocommerce-product-details__short-description {
+        min-height: 100px;
+    }
+
+    .elementor-widget-button {
+        .elementor-button-text {
+            display: inline-block;
+            width: 100px;
+        }
+    }
+}
+
+.post_list {
+
+    .elementor-post__excerpt {
+        min-height: 150px;
+        padding: 20px 0;
+    }
+
+    .elementor-post__read-more {
+        position: relative;
+
+        &:after {
+            content: "";
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            width: 0;
+            height: 3px;
+            background: var(--e-global-color-accent);
+            position: absolute;
+            transition: all 0.3s ease;
+        }
+
+        &:hover {
+            &:after {
+                width: 100%;
             }
         }
     }
