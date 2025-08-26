@@ -3,9 +3,8 @@ add_filter('woocommerce_get_price_html', 'replace_price_with_login_message', 10,
 
 function replace_price_with_login_message($price, $product) {
     $price_html = $price;
-    global $myaccount_url;
     if (!is_user_logged_in()) {
-        $price_html = "<p><a class='login-required-mess' href='$myaccount_url'>" . __('Login to see price', 'woocommerce') . "</a></p>";
+        $price_html = "<p><a class='login-required-mess' href='/membership'>" . __('Login to see price', 'woocommerce') . "</a></p>";
     }
     return $price_html;
 }
@@ -35,10 +34,9 @@ add_filter('woocommerce_is_purchasable', 'disable_add_to_cart_if_not_logged_in',
 
 // redirect to login page if try to add to cart
 function add_to_cart_redirect_if_not_logged_in() {
-    global $myaccount_url;
     if (!is_user_logged_in() && isset($_REQUEST['add-to-cart'])) {
         wc_add_notice(__('You need to login to add your product to cart.', 'woocommerce'), 'error');
-        wp_redirect($myaccount_url);
+        wp_redirect("/membership");
         exit;
     }
 }
