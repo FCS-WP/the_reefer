@@ -1,4 +1,6 @@
 // import { DisplayLabel } from './components/DisplayLabel';
+import "../lib/slick/slick.min"
+import "./slider";
 
 let Main = {
   init: async function () {
