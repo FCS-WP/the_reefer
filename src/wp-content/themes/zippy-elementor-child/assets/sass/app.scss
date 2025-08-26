@@ -2,6 +2,7 @@
 @import url("../lib/slick/slick-theme.css");
 @import "about_us";
 @import "contact_us";
+@import "shop";
 
 .slick-slide {
     margin: 0 15px !important;
@@ -209,6 +210,18 @@
         &:hover {
             &:after {
                 width: 100%;
+            }
+        }
+    }
+}
+
+#footer {
+    .elementor-widget-icon-list {
+        a {
+            &:hover {
+                span {
+                    color: var(--e-global-color-primary)
+                }
             }
         }
     }

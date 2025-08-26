@@ -1,0 +1,256 @@
+#shop {
+    .elementor-widget-jkit_product_categories {
+        .jkit-product-category {
+            margin: 10px 0;
+        }
+    }
+}
+
+.woocommerce ul.products {
+    &.columns-3 {
+        .custom-loop-product {
+            max-width: 450px;
+        }
+    }
+
+    li {
+        .product-featured {
+            .custom-product-thumbnail {
+                height: 200px;
+                object-fit: cover;
+                margin: 0;
+            }
+        }
+
+        .product-info {
+            text-align: center;
+
+            .product-title {
+                .title-link {
+                    font-size: 24px;
+                    font-weight: 600;
+                    color: var(--e-global-color-f202e73) !important;
+
+                    &:hover {
+                        color: var(--e-global-color-primary);
+                    }
+                }
+            }
+
+            .product-short-desc {
+                p {
+                    font-weight: 400;
+                    color: var(--e-global-color-f202e73);
+                }
+
+            }
+        }
+
+        .product-price {
+            .woocommerce-Price-amount bdi {
+                color: var(--e-global-color-primary);
+                font-size: 23px;
+                font-weight: 600;
+            }
+
+            .has-sale {
+                text-decoration-line: line-through;
+                text-decoration-color: var(--e-global-color-f202e73);
+                text-decoration-thickness: 2px;
+                color: var(--e-global-color-f202e73);
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+
+        .product-actions {
+            &.grid {
+                text-align: center;
+                height: 100%;
+                display: flex;
+                align-items: end;
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            .button {
+                padding: 10px 15px;
+                background-color: var(--e-global-color-eb55326);
+                color: var(--e-global-color-accent);
+                border-radius: 0;
+                transition: all 0.3s ease-in-out;
+                margin: 0 10px;
+                font-weight: bold !important;
+                font-size: 18px;
+
+                &:hover {
+                    color: var(--e-global-color-secondary);
+                    background-color: var(--e-global-color-primary);
+                }
+            }
+
+
+        }
+    }
+
+    &.display-list {
+        li {
+
+            .product-featured,
+            .product-actions {
+                width: 25%;
+            }
+
+            .product-info {
+                width: 50%;
+                text-align: left;
+                border-right: 1px solid var(--e-global-color-f202e73);
+            }
+
+            .custom-product-item {
+                display: flex;
+                padding: 0 15px;
+                > *{
+                    padding: 30px 15px;
+                }
+                .product-short-desc {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 8;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .product-actions {
+                    width: 25%;
+                    align-self: center;
+
+                    .button {
+                        margin: 10px 0 0 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .custom-loop-product {
+        border-radius: 10px;
+        background: var(--e-global-color-724952c);
+        float: none !important;
+        width: 100% !important;
+
+        .custom-product-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 30px;
+
+            .product-short-desc {
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color: var(--e-global-color-f202e73);
+                min-height: 150px;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .custom-loop-product {
+            padding: 20px !important;
+        }
+
+        .custom-product-item {
+            flex-direction: column;
+            text-align: center;
+
+            .product-actions,
+            .product-featured,
+            .product-info {
+                width: 100%;
+            }
+
+            .product-featured {
+                .custom-product-thumbnail {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.wpc-checkbox-item {
+    ul {
+        padding: 0;
+    }
+}
+
+
+.ordering-and-view {
+    display: flex;
+    justify-content: end;
+    justify-items: center;
+    gap: 10px;
+
+    .woocommerce-ordering {
+        float: none !important;
+
+        select {
+            background: white;
+            border-color: lightgray;
+        }
+    }
+
+    .shop-view-toggle {
+        display: flex;
+        gap: 10px;
+        justify-items: center;
+
+        .toggle-data-type {
+            svg {
+                font-size: 32px;
+                fill: black;
+            }
+
+            &.active,
+            &:hover {
+                svg {
+                    fill: var(--e-global-color-primary);
+                }
+            }
+        }
+    }
+}
+
+.products.display-list {
+    display: flex !important;
+    flex-direction: column;
+}
+
+@media (max-width: 1200px) {
+    .woocommerce.columns-3 .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .products .custom-loop-product {
+        padding: 20px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .woocommerce.columns-3 .products {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .ordering-and-view {
+        width: 100%;
+    }
+}
+
+.products.columns-4 {
+    .custom-loop-product {
+        padding: 30px 20px !important;
+    }
+}
